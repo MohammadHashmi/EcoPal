@@ -30,7 +30,8 @@ export default function TamagotchiPanda() {
     }
 
     return(
-<div className="max-w-md mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center border-4 border-gray-600">
+<div className="flex justify-center items-center min-h-screen">
+<div className="max-w-md mx-auto p-6 bg-main text-text bg-main border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark shadow-lg text-center">
     <Link href="/">
         <Button className="absolute top-0 left-0 m-16">
           <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4"></img>
@@ -64,6 +65,7 @@ export default function TamagotchiPanda() {
             </button>
         </div>
     </div>
+</div>
     );
 }
     

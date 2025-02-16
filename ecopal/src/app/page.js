@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { AnimalCard } from "@/components/ui/animalcard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
 import { supabase } from "../../lib/supabase";
 import { PawPrint } from "lucide-react";
@@ -17,7 +16,7 @@ const animals = [
     name: "Luna",
     species: "fox",
     location: "Central Asia",
-    imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+    imageUrl: "https://images.unsplash.com/photo-1474511320723-9a56873867b5",
     status: "endangered"
   },
   {
@@ -25,7 +24,7 @@ const animals = [
     name: "Atlas",
     species: "monkey",
     location: "Central Africa",
-    imageUrl: "https://images.unsplash.com/photo-1493962853295-0fd70327578a",
+    imageUrl: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?",
     status: "critical"
   },
   {
@@ -33,7 +32,7 @@ const animals = [
     name: "Nova",
     species: "panda",
     location: "Indonesia",
-    imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
+    imageUrl: "https://images.unsplash.com/photo-1597953601374-1ff2d5640c85",
     status: "vulnerable"
   }
 ];

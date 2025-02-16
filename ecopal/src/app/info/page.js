@@ -46,23 +46,12 @@ export default function TeamMissionPage() {
               Our Mission
             </Badge>
             <h1 className="animate-fade-in text-4xl font-bold text-natural-800 sm:text-5xl md:text-6xl">
-              Protecting Wildlife & Nature
+              Protecting Wildlife One Pal At a Time
             </h1>
             <p className="mt-6 animate-fade-in text-lg text-natural-800 pb-4">
-              Join our mission to safeguard endangered species and preserve the beauty of nature through conservation, education, and community action.
+              Join our mission to safeguard endangered species and preserve the beauty of nature through virtual adoptions.
             </p>
             <img src="https://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif" className="rounded-xl opacity-50 border-opacity-100https://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif border-black opacity"></img>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button>Get Involved</Button>
-
-              {/* ✅ Matching "Learn More" button */}
-              <Link href="/info">
-                <Button>
-                  <Globe className="mr-2 h-4 w-4" />
-                  <span>Learn More</span>
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -71,7 +60,7 @@ export default function TeamMissionPage() {
       <section className="py-20">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold text-natural-800">
-            How We Make a Difference (CHANGE THIS STUFF)
+            How We Make a Difference
           </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {missionPoints.map((point) => (
