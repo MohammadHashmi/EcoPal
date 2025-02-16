@@ -11,11 +11,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useRouter } from "next/navigation";
 
-export default function SignUp() {
+export default function LogIn() {
+  const router = useRouter();
+
   const form = useForm({
     defaultValues: {
-      email: "",
+      email: "",  
       password: "",
     },
   });
@@ -24,29 +27,25 @@ export default function SignUp() {
 
   async function signUpNewUser(data) {
     const { email, password } = data; // Extract values directly from form
-    console.log("Signing up with:", email, password); // Debugging
 
-
-    const { error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
-      options: {
-        emailRedirectTo: "https://example.com/welcome", // Update with your redirect URL
-      },
     });
 
     if (error) {
       setError(error.message);
     } else {
       setError(""); // Clear error if successful
-      alert("Sign-up successful! Check your email for confirmation.");
+      alert("Log In Successful!");
+      router.push('/')
     }
   
   }
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-gray-800 text-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-4 text-center">Sign Up</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">Log In</h2>
 
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
@@ -97,7 +96,7 @@ export default function SignUp() {
             type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300"
           >
-            Sign Up
+            Log In
           </Button>
         </form>
       </Form>
