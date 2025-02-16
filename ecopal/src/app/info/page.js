@@ -13,19 +13,19 @@ const missionPoints = [
     id: 1,
     title: "🌱 Conservation Efforts",
     description:
-      "We lead reforestation projects, habitat restoration, and anti-poaching initiatives to ensure the survival of vulnerable species.",
+      "Our app promotes animal conservation by allowing users to virtually adopt endangered species, fostering a deeper connection with wildlife. Gamification rewards eco-friendly actions, encouraging sustainable habits that contribute to real-world impact.",
   },
   {
     id: 2,
-    title: "📚 Education & Awareness",
+    title: "📚 Fund Wildlife",
     description:
-      "Empowering communities through workshops, school programs, and online campaigns to spread awareness about wildlife conservation.",
+      "100% of proceeds from virtual adoptions supports wildlife organizations dedicated to habitat preservation and species protection. By blending technology, education, and community-driven initiatives, our platform empowers individuals to take meaningful steps toward safeguarding endangered animals and their ecosystems.",
   },
   {
     id: 3,
     title: "🤝 Community Involvement",
     description:
-      "Collaborating with local communities, researchers, and conservationists to drive meaningful change for endangered species.",
+      "Collaborating with local communities, researchers, and conservationists to drive meaningful change for endangered species. We are passionate about saving animals, and are eager to help in anyway we can. Please contact us for research opportunities.",
   },
 ];
 
