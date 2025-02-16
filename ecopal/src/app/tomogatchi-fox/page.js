@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 
 export default function TamagotchiPanda() {
     const [hunger, setHunger] = useState(100);
@@ -29,6 +32,11 @@ export default function TamagotchiPanda() {
 
     return(
 <div className="max-w-md mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center border-4 border-gray-600">
+<Link href="/">
+        <Button className="absolute top-0 left-0 m-16">
+          <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4"></img>
+        </Button>
+      </Link>
         <h1 className="text-3xl font-bold pixel-font">🐾 My 8-bit Pet</h1>
         <p className="mt-2">Take care of your Tamagotchi!</p>
 

@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { AnimalCard } from "@/components/ui/animalcard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
 import { supabase } from "../../lib/supabase";
 import { PawPrint } from "lucide-react";
