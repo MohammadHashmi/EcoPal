@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -7,13 +8,14 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
 	extend: {
 	  colors: {
 		main: '#A3E636',
 		overlay: 'rgba(0,0,0,0.8)', // background color overlay for alert dialogs, modals, etc.
-  
+		
 		// light mode
-		bg: '#E0E7F1',
+		bg: '#000',
 		text: '#000',
 		border: '#000',
   

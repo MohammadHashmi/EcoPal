@@ -11,42 +11,42 @@ const statusColors = {
 
 export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt }) => {
   return (
-    <Card className="group relative overflow-hidden border-4 border-natural-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-1">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-natural-100 to-natural-200 opacity-50" />
+    <Card className="group relative overflow-hidden transition-all duration-300 hover:-translate-y-1">
+      <div className="absolute inset-0 -z-10" />
       
-      <div className="relative h-48 overflow-hidden border-b-4 border-natural-800">
+      <div className="relative h-48 overflow-hidden">
         <img
           src={imageUrl}
           alt={name}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-natural-200/50 to-transparent" />
+        <div className="absolute inset-0" />
       </div>
 
-      <CardHeader className="space-y-2 bg-natural-100">
+      <CardHeader className="space-y-2">
         <div className="flex items-center justify-between">
-          <Badge variant="outline" className={`border-2 ${statusColors[status]}`}>
+          <Badge className={`border-2 ${statusColors[status]}`}>
             {status.charAt(0).toUpperCase() + status.slice(1)}
           </Badge>
-          <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-natural-200">
+          <Button variant="noShadow" size="icon" className="h-8 w-8 hover:bg-natural-200">
             <Heart className="h-5 w-5 text-natural-600" />
           </Button>
         </div>
-        <CardTitle className="text-xl font-bold text-natural-800">{name}</CardTitle>
-        <CardDescription className="text-natural-800">
+        <CardTitle className="text-xl font-bold">{name}</CardTitle>
+        <CardDescription>
           {species}
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="bg-natural-100 pt-2">
-        <p className="text-sm text-natural-800">
+      <CardContent className="pt-2">
+        <p className="text-sm">
           <span className="font-bold">Location:</span> {location}
         </p>
       </CardContent>
 
-      <CardFooter className="bg-natural-100">
+      <CardFooter>
         <Button 
-          className="w-full border-4 border-natural-800 bg-accent-300 text-natural-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]"
+          className="w-full transition-all hover:-translate-y-1 bg-[#E0E7F1]"
           onClick={onAdopt}
         >
           <PawPrint className="mr-2 h-4 w-4" />
