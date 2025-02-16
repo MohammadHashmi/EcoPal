@@ -4,8 +4,12 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AnimalCard } from "../../components/ui/animalcard";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+
 
 export default function Tamagotchi() {
+  const searchParams = useSearchParams();
+  const list = JSON.parse(decodeURIComponent(searchParams.get("list") || "[]"));
   const myPets = [
     {
       id: 1,
@@ -46,9 +50,9 @@ export default function Tamagotchi() {
       <section className="mb-12 p-6 bg-blue-100 rounded-lg shadow-md">
         <h1 className="text-3xl font-extrabold mb-6 text-blue-900">Your Pets</h1>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {myPets.map((pet) => (
+          {list.map((pet) => (
             <div key={pet.id} className="animate-fade-in">
-              <Link href={`/tamagotchi/${pet.id}`}>
+              <Link href={`/tomogatchi-${pet.name}`}>
                 <AnimalCard {...pet} />
               </Link>
             </div>
