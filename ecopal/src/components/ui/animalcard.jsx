@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { PawPrint, Heart } from "lucide-react";
 
 const statusColors = {
-  endangered: "bg-accent-200 text-natural-800",
-  critical: "bg-accent-300 text-natural-800",
-  vulnerable: "bg-accent-100 text-natural-800",
+  endangered: "bg-red-400 text-natural-800",
+  critical: "bg-orange-400 text-natural-800",
+  vulnerable: "bg-yellow-400 text-natural-800",
 };
 
 export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt }) => {
@@ -28,7 +28,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
           <Badge className={`border-2 ${statusColors[status]}`}>
             {status.charAt(0).toUpperCase() + status.slice(1)}
           </Badge>
-          <Button variant="noShadow" size="icon" className="h-8 w-8 hover:bg-natural-200">
+          <Button variant="noShadow" size="icon" className="h-8 w-8 hover:bg-pink-200">
             <Heart className="h-5 w-5 text-natural-600" />
           </Button>
         </div>
