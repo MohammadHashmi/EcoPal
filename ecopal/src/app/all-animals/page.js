@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { supabase } from "../../../lib/supabase";
 import { AnimalCard } from "@/components/ui/animalcard";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function AllAnimals() {
 
@@ -79,6 +81,11 @@ export default function AllAnimals() {
 
   return (
     <>
+    <Link href="/">
+      <Button className="absolute top-0 left-0 m-16">
+        <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4 scale-x-[-1]"></img>
+      </Button>
+    </Link>
     <h1 className="text-6xl font-extrabold text-center mt-12 mb-8">All Animals</h1>
     <div className="flex items-center justify-center">
         <div className="container grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

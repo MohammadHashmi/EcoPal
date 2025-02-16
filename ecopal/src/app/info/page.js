@@ -29,6 +29,11 @@ const missionPoints = [
 export default function TeamMissionPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-start">
+      <Link href="/">
+        <Button className="absolute top-0 left-0 m-16">
+          <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4 scale-x-[-1]"></img>
+        </Button>
+      </Link>
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="container mx-auto px-4">
@@ -40,9 +45,10 @@ export default function TeamMissionPage() {
             <h1 className="animate-fade-in text-4xl font-bold text-natural-800 sm:text-5xl md:text-6xl">
               Protecting Wildlife & Nature
             </h1>
-            <p className="mt-6 animate-fade-in text-lg text-natural-800">
+            <p className="mt-6 animate-fade-in text-lg text-natural-800 pb-4">
               Join our mission to safeguard endangered species and preserve the beauty of nature through conservation, education, and community action.
             </p>
+            <img src="https://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif" className="rounded-xl opacity-50 border-opacity-100https://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif border-black opacity"></img>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button>Get Involved</Button>
 
@@ -66,9 +72,9 @@ export default function TeamMissionPage() {
           </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {missionPoints.map((point) => (
-              <div key={point.id} className="animate-fade-in bg-white p-6 shadow-lg rounded-xl border border-gray-200 hover:shadow-xl transition-all">
-                <h2 className="text-2xl font-semibold text-blue-700">{point.title}</h2>
-                <p className="text-gray-600 mt-2">{point.description}</p>
+              <div key={point.id} className="text-text bg-main border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark bg-white">
+                <h2 className="px-4 pt-4 text-2xl font-semibold text-[#A3E636]">{point.title}</h2>
+                <p className="px-4 pb-4 text-gray-600 mt-2">{point.description}</p>
               </div>
             ))}
           </div>

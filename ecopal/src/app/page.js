@@ -50,6 +50,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start w-full">
+      <Link href="/">
+        <Button className="absolute top-0 left-0 m-16" variant="reverse">
+          <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4 scale-x-[-1]"></img>
+        </Button>
+      </Link>
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="container mx-auto px-4">
@@ -68,7 +73,9 @@ const Index = () => {
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button>View All Animals</Button>
+              <Link href="/all-animals">
+                <Button>View All Animals</Button>
+              </Link>
               <Link href="/info">
                 <Button>
                   <Globe className="mr-2 h-4 w-4" />
