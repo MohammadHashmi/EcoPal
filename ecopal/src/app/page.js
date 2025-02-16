@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
+import { supabase } from "../../lib/supabase";
 
 const animals = [
   {
@@ -36,17 +37,20 @@ const animals = [
 ];
 
 const Index = () => {
-  const { toast } = useToast();
-  const [adoptedAnimals, setAdoptedAnimals] = useState([]);
+  const user = supabase.auth.getUser();
+  console.log(user)
+  if(!user){
+    alert("You must be signed in to adopt an animal!")
+  }
 
-  const handleAdopt = (animalId) => {
-    setAdoptedAnimals((prev) => [...prev, animalId]);
-    toast({
-      title: "Thank you for adopting!",
-      description: "You've made a difference in an endangered animal's life.",
-      duration: 5000,
-    });
-  };
+  /*async function addTomogatchis(animal){
+    const { data, error } = await supabase.from("Tomogatchi's").insert([
+        { user_owner: user, animal_species: animal }
+      ]);
+
+    console.log(data, error)
+
+  }*/
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start w-full">
@@ -68,7 +72,9 @@ const Index = () => {
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button>View All Animals</Button>
+              <Link href={"all-animals"}>
+                <Button>View All Animals</Button>
+              </Link>
               <Link href="/info">
                 <Button>
                   <Globe className="mr-2 h-4 w-4" />
@@ -91,7 +97,7 @@ const Index = () => {
               <div key={animal.id} className="animate-fade-in">
                 <AnimalCard
                   {...animal}
-                  onAdopt={() => handleAdopt(animal.id)}
+                  onAdopt={() => addTomogatchis("tiger")}
                 />
               </div>
             ))}
