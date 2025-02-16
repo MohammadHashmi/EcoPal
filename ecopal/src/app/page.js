@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
+import { PawPrint } from "lucide-react";
 
 const animals = [
   {
@@ -67,7 +68,7 @@ const Index = () => {
           <div className="mx-auto max-w-3xl text-center">
             <Badge className="mb-16 inline-flex items-center border-2 px-4 py-1 text-sm text-natural-800">
               <Leaf className="mr-1 h-4 w-4" />
-              Make a Difference Today
+              Adopt Virtually, Protect Globally.
             </Badge>
             <h1 className="animate-fade-in text-4xl font-bold text-natural-800 sm:text-5xl md:text-6xl">
               Adopt an Endangered Animal
@@ -76,7 +77,7 @@ const Index = () => {
               <img src="/gifs/pixelpups.gif" alt="GIF"></img>
             </div>
             <p className="mt-6 animate-fade-in text-lg text-natural-800">
-              Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
+              Join our mission to protect endangered species. sponsor endangered animals, care for them virtually, and be a part of the Conservation Revolution
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/all-animals">
@@ -86,6 +87,12 @@ const Index = () => {
                 <Button>
                   <Globe className="mr-2 h-4 w-4" />
                   <span>Learn More</span>
+                </Button>
+              </Link>
+              <Link href="/info">
+                <Button>
+                  <PawPrint className="mr-2 h-4 w-4" />
+                  <span>View Pals</span>
                 </Button>
               </Link>
             </div>
@@ -109,6 +116,16 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="container">
+          <h2 className="mb-12 text-center text-3xl font-bold text-natural-800">
+          EcoPals: Adopt, Protect, and Make a Difference
+          </h2>
+          <p>Join the global movement to save endangered species with EcoAdopt, the first-ever virtual adoption platform that connects you directly to the animals you sponsor. Experience the thrill of interactive updates, including AI-generated messages from your adopted animal, live cam feeds, and personalized climate impact reports.
+Through gamification, EcoAdopt rewards you for taking eco-friendly actions and contributing to a sustainable future. Each step you take brings us closer to protecting the world’s most vulnerable species.
+Adopt an animal today, and be part of a change that echoes for generations.</p>
         </div>
       </section>
     </div>

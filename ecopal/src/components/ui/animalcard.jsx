@@ -18,7 +18,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
         <img
           src={imageUrl}
           alt={name}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-90"
         />
         <div className="absolute inset-0" />
       </div>
