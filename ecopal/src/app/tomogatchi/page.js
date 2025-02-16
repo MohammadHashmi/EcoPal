@@ -11,22 +11,6 @@ import { Suspense } from "react";
 export default function Tamagotchi() {
   const searchParams = useSearchParams();
   const list = JSON.parse(decodeURIComponent(searchParams.get("list") || "[]"));
-  const myPets = [
-    {
-      id: 1,
-      name: "Tiger",
-      owner: "I l0ve animals",
-      status: "Happy and healthy!",
-      imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-    },
-    {
-      id: 2,
-      name: "Bunny",
-      owner: "Fluffy lover",
-      status: "Excited to play!",
-      imageUrl: "https://images.unsplash.com/photo-1560807707-8cc77767d783",
-    },
-  ];
 
   const otherPets = [
     {
@@ -69,9 +53,11 @@ export default function Tamagotchi() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {otherPets.map((pet) => (
             <div key={pet.id} className="animate-fade-in">
+              <Suspense fallback={<div>Loading...</div>}>
               <Link href={`/tamagotchi/${pet.id}`}>
                 <AnimalCard {...pet} />
               </Link>
+              </Suspense>
             </div>
           ))}
         </div>
