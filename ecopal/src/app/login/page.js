@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { supabase } from "../../../lib/supabase";
+//import { supabase } from "../supabase";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useRouter } from "next/navigation";
+import { createClient } from '../../../utils/supabase/server'
 
 export default function LogIn() {
   const router = useRouter();
@@ -25,7 +26,8 @@ export default function LogIn() {
 
   const [error, setError] = useState(""); 
 
-  async function signUpNewUser(data) {
+  async function signIn(data) {
+    const supabase = await createClient()
     const { email, password } = data; // Extract values directly from form
 
     const { error } = await supabase.auth.signInWithPassword({
@@ -50,7 +52,7 @@ export default function LogIn() {
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(signUpNewUser)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(signIn)} className="space-y-6">
           {/* Email Field */}
           <FormField
             control={form.control}

@@ -44,7 +44,7 @@ const Index = () => {
   }
   console.log(user)
 
-  /*async function addTomogatchis(animal){
+  async function addTomogatchis(animal){
     const { sigma: { session } } = await supabase.auth.getSession();
     const { data, error } = await supabase.from("Tomogatchi's").insert([
         { user_owner: user, animal_species: animal }
@@ -53,7 +53,7 @@ const Index = () => {
     console.log(data, error)
     console.log(session)
 
-  }*/
+  }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start w-full">
@@ -95,7 +95,7 @@ const Index = () => {
                   <span>Learn More</span>
                 </Button>
               </Link>
-              <Link href="/info">
+              <Link href="/tomogatchi">
                 <Button>
                   <PawPrint className="mr-2 h-4 w-4" />
                   <span>View Pals</span>
