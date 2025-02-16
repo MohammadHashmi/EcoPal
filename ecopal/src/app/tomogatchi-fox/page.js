@@ -33,7 +33,7 @@ export default function TamagotchiPanda() {
         <p className="mt-2">Take care of your Tamagotchi!</p>
 
         {/* 8-bit Pet Display */}
-        <div className="mt-4">
+        <div className="mt-4 justify-center items-center">
             <Image
                 src={petImage} // ✅ Updated to GIF format
                 alt="Tamagotchi Pet"

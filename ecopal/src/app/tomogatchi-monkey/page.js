@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-
-export default function TamagotchiMonkey() {
+export default function TamagotchiPanda() {
     const [hunger, setHunger] = useState(100);
     const [happiness, setHappiness] = useState(100);
     const [energy, setEnergy] = useState(100);
@@ -21,21 +20,27 @@ export default function TamagotchiMonkey() {
     }, []);
 
     // Choose pet image based on stats
-    let petImage = "/gifs/monkey-n.gif"; // Default GIF
+    let petImage = "/monkey-n.gif"; // Default GIF
     if (hunger > 70 && happiness > 70 && energy > 70) {
-        petImage = "/gifs/monkey-h.gif"; // Happy Pet GIF
+        petImage = "/monkey-h.gif"; // Happy Pet GIF
     } else if (hunger < 30 || happiness < 30 || energy < 30) {
-        petImage = "/gifs/monkey-s.gif"; // Sad Pet GIF
+        petImage = "monkey-s.gif"; // Sad Pet GIF
     }
 
     return(
-        <div className="max-w-md mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center border-4 border-gray-600">
+<div className="max-w-md mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center border-4 border-gray-600">
         <h1 className="text-3xl font-bold pixel-font">🐾 My 8-bit Pet</h1>
         <p className="mt-2">Take care of your Tamagotchi!</p>
 
         {/* 8-bit Pet Display */}
         <div className="mt-4">
-            <img src={petImage} alt="GIF"></img>
+            <Image
+                src={petImage} // ✅ Updated to GIF format
+                alt="Tamagotchi Pet"
+                width={250} // Increased size
+                height={250} // Increased size
+                className="pixelated mx-auto"
+            />
         </div>
 
         {/* Display Pet Stats */}
