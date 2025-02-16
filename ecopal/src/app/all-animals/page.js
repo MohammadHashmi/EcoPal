@@ -33,7 +33,7 @@ export default function AllAnimals() {
             name: "African Forest Elephant",
             location: "North America",
             imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-            status: "Critically Endangered"
+            status: "critically endangered"
           },
 
           {
@@ -41,7 +41,7 @@ export default function AllAnimals() {
             name: "Black Rhino",
             location: "North America",
             imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-            status: "Critically Endangered"
+            status: "critically endangered"
           },
 
           {
@@ -49,7 +49,7 @@ export default function AllAnimals() {
             name: "Vaquita",
             location: "North America",
             imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-            status: "Critically Endangered"
+            status: "critically endangered"
           },
 
           {
@@ -57,7 +57,7 @@ export default function AllAnimals() {
             name: "Blue Whale",
             location: "Asia",
             imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-            status: "Endangered"
+            status: "endangered"
           },
 
           {
@@ -65,7 +65,7 @@ export default function AllAnimals() {
             name: "Red Panda",
             location: "Asia",
             imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-            status: "Endangered"
+            status: "endangered"
           },
 
           {
@@ -73,7 +73,7 @@ export default function AllAnimals() {
             name: "Cheetah",
             location: "Africa",
             imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-            status: "Vulnerable"
+            status: "vulnerable"
           },
       ];
 
