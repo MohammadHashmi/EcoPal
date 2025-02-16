@@ -16,7 +16,7 @@ export default function Tamagotchi() {
       name: "Tiger",
       owner: "I l0ve animals",
       status: "change soon",
-      imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+      imageUrl: "https://images.unsplash.com/photo-1615824996195-f780bba7cfab",
     },
   ];
 
