@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
+import { supabase } from "../../lib/supabase";
 import { PawPrint } from "lucide-react";
 
 const animals = [
@@ -37,17 +38,20 @@ const animals = [
 ];
 
 const Index = () => {
-  const { toast } = useToast();
-  const [adoptedAnimals, setAdoptedAnimals] = useState([]);
+  const user = supabase.auth.getUser();
+  console.log(user)
+  if(!user){
+    alert("You must be signed in to adopt an animal!")
+  }
 
-  const handleAdopt = (animalId) => {
-    setAdoptedAnimals((prev) => [...prev, animalId]);
-    toast({
-      title: "Thank you for adopting!",
-      description: "You've made a difference in an endangered animal's life.",
-      duration: 5000,
-    });
-  };
+  /*async function addTomogatchis(animal){
+    const { data, error } = await supabase.from("Tomogatchi's").insert([
+        { user_owner: user, animal_species: animal }
+      ]);
+
+    console.log(data, error)
+
+  }*/
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start w-full">
@@ -111,7 +115,7 @@ const Index = () => {
               <div key={animal.id} className="animate-fade-in">
                 <AnimalCard
                   {...animal}
-                  onAdopt={() => handleAdopt(animal.id)}
+                  onAdopt={() => addTomogatchis("tiger")}
                 />
               </div>
             ))}
