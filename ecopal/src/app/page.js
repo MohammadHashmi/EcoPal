@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
+import Link from "next/link";
 
 const animals = [
   {
@@ -67,9 +68,12 @@ const Index = () => {
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button>
-                View All Animals
-              </Button>
+              <Link href="/all-animals">
+                <Button 
+                  className="border-4 border-natural-800 bg-accent-300 text-natural-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  View All Animals
+                </Button>
+              </Link>
               <Button >
                 <Globe className="mr-2 h-4 w-4" />
                 Learn More
