@@ -80,7 +80,7 @@ export default function AllAnimals() {
       ];
 
   return (
-    <>
+    <div>
     <Link href="/">
       <Button className="absolute top-0 left-0 m-16">
         <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4 scale-x-[-1]"></img>
@@ -98,6 +98,6 @@ export default function AllAnimals() {
           ))}
       </div>
     </div>
-      </>
+      </div>
     );
 }
