@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@radix-ui/react-navigation-menu": "^1.2.5",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-toast": "^1.2.6",
@@ -20,13 +19,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7"
-=======
-    "@supabase/supabase-js": "^2.48.1",
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
->>>>>>> 2fa7632686c74d4a11977ea9bab6103f210ddb28
+    "tailwindcss-animate": "^1.0.7",
+    "@supabase/supabase-js": "^2.48.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

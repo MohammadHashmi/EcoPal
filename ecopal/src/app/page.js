@@ -48,15 +48,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-natural-100 flex flex-col items-center justify-start">
+    <div className="min-h-screen flex flex-col items-center justify-start">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-natural-200 py-20">
+      <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-natural-100 to-natural-200 opacity-50" />
+          <div className="absolute inset-0" />
         </div>
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-4 inline-flex items-center border-2 border-natural-800 bg-accent-300 px-4 py-1 text-sm text-natural-800">
+            <Badge className="mb-4 inline-flex items-center border-2 px-4 py-1 text-sm text-natural-800">
               <Leaf className="mr-1 h-4 w-4" />
               Make a Difference Today
             </Badge>
@@ -67,14 +67,10 @@ const Index = () => {
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button 
-                className="border-4 border-natural-800 bg-accent-300 text-natural-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]"
-              >
+              <Button>
                 View All Animals
               </Button>
-              <Button 
-                className="border-4 border-natural-800 bg-natural-100 text-natural-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]"
-              >
+              <Button >
                 <Globe className="mr-2 h-4 w-4" />
                 Learn More
               </Button>
@@ -84,7 +80,7 @@ const Index = () => {
       </section>
 
       {/* Featured Animals Section */}
-      <section className="bg-natural-100 py-20">
+      <section className="py-20">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold text-natural-800">
             Featured Animals
