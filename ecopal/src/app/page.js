@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimalCard } from "@/components/ui/animalcard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -39,17 +39,19 @@ const animals = [
 
 const Index = () => {
   const user = supabase.auth.getUser();
-  console.log(user)
   if(!user){
     alert("You must be signed in to adopt an animal!")
   }
+  console.log(user)
 
   /*async function addTomogatchis(animal){
+    const { sigma: { session } } = await supabase.auth.getSession();
     const { data, error } = await supabase.from("Tomogatchi's").insert([
         { user_owner: user, animal_species: animal }
       ]);
 
     console.log(data, error)
+    console.log(session)
 
   }*/
 
@@ -84,7 +86,7 @@ const Index = () => {
               Join our mission to protect endangered species. sponsor endangered animals, care for them virtually, and be a part of the Conservation Revolution
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/all-animals">
+              <Link href={"/all-animals"}>
                 <Button>View All Animals</Button>
               </Link>
               <Link href="/info">
