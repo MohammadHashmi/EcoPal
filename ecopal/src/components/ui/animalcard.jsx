@@ -62,6 +62,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
   <DrawerTrigger asChild>
   <Button 
           className="w-full transition-all hover:-translate-y-1 bg-[#E0E7F1]"
+          onClick={onAdopt}
         >
           <PawPrint className="mr-2 h-4 w-4" />
           Adopt {name}
