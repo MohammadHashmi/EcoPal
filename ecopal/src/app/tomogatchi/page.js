@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { AnimalCard } from "../../components/ui/animalcard";
+import { TomogatchiCard } from "@/components/ui/tomogatch";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { Button } from "@/components/ui/button";
 
 // Move the component using useSearchParams into a separate component
 function PetsList() {
@@ -17,7 +18,7 @@ function PetsList() {
       {list.map((pet) => (
         <div key={pet.id} className="animate-fade-in">
           <Link href={`/tomogatchi-${pet.name}`}>
-            <AnimalCard {...pet} />
+            <TomogatchiCard {...pet} />
           </Link>
         </div>
       ))}
@@ -44,7 +45,12 @@ export default function Tamagotchi() {
   ];
 
   return (
-    <div className="container px-4 py-8">
+    <div className="container px-4 py-8 mt-20">
+            <Link href="/">
+        <Button className="absolute top-0 left-0 m-16">
+          <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4"></img>
+        </Button>
+      </Link>
       {/* Your Pets Section */}
       <section className="mb-12 p-6 bg-blue-100 rounded-lg shadow-md">
         <h1 className="text-3xl font-extrabold mb-6 text-blue-900">Your Pets</h1>
@@ -61,7 +67,7 @@ export default function Tamagotchi() {
           {otherPets.map((pet) => (
             <div key={pet.id} className="animate-fade-in">
               <Link href={`/tamagotchi/${pet.id}`}>
-                <AnimalCard {...pet} />
+                <TomogatchiCard {...pet} />
               </Link>
             </div>
           ))}

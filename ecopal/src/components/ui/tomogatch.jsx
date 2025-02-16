@@ -19,7 +19,7 @@ const statusColors = {
   vulnerable: "bg-yellow-400 text-natural-800",
 };
 
-export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt }) => {
+export const TomogatchiCard = ({ name, species, location, imageUrl, status, onAdopt }) => {
   return (
     <Card className="group relative overflow-hidden transition-all duration-300 hover:-translate-y-1">
       <div className="absolute inset-0 -z-10" />
@@ -42,7 +42,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
             <Heart className="h-5 w-5 text-natural-600" />
           </Button>
         </div>
-        <CardTitle className="text-xl font-bold">{name}</CardTitle>
+        <CardTitle className="text-xl font-bold">{name.charAt(0).toUpperCase() + name.slice(1)}</CardTitle>
         <CardDescription>
           {species}
         </CardDescription>
@@ -50,7 +50,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
 
       <CardContent className="pt-2">
         <p className="text-sm">
-          <span className="font-bold">Location:</span> {location}
+          <span>Excited to see you!</span>
         </p>
       </CardContent>
 
@@ -62,7 +62,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
           onClick={onAdopt}
         >
           <PawPrint className="mr-2 h-4 w-4" />
-          Adopt {name}
+          Play with {name.charAt(0).toUpperCase() + name.slice(1)}
         </Button>
   </DrawerTrigger>
   <DrawerContent className="bg-main">
@@ -72,11 +72,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
         <DrawerDescription>You can view new EcoPal in "My Pals"</DrawerDescription>
       </DrawerHeader>
       <DrawerFooter className="grid grid-cols-2">
-        <DrawerClose>
-            <Link href="/">
-                <Button className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText">Adopt</Button>
-            </Link>
-        </DrawerClose>
+        <Button className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText">Adopt</Button>
         <DrawerClose asChild>
           <Button
             className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText"
