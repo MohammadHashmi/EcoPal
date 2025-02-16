@@ -2,6 +2,16 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PawPrint, Heart } from "lucide-react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer'
 
 const statusColors = {
   endangered: "bg-red-400 text-natural-800",
@@ -45,13 +55,35 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
       </CardContent>
 
       <CardFooter>
-        <Button 
+      <Drawer>
+  <DrawerTrigger asChild>
+  <Button 
           className="w-full transition-all hover:-translate-y-1 bg-[#E0E7F1]"
           onClick={onAdopt}
         >
           <PawPrint className="mr-2 h-4 w-4" />
           Adopt {name}
         </Button>
+  </DrawerTrigger>
+  <DrawerContent className="bg-main">
+    <div className="mx-auto w-[300px]">
+      <DrawerHeader>
+        <DrawerTitle className="">Are you absolutely sure?</DrawerTitle>
+        <DrawerDescription>You can view new EcoPal in "My Pals"</DrawerDescription>
+      </DrawerHeader>
+      <DrawerFooter className="grid grid-cols-2">
+        <Button className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText">Adopt</Button>
+        <DrawerClose asChild>
+          <Button
+            className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText"
+          >
+            Cancel
+          </Button>
+        </DrawerClose>
+      </DrawerFooter>
+    </div>
+  </DrawerContent>
+</Drawer>
       </CardFooter>
     </Card>
   );
