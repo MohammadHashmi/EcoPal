@@ -20,11 +20,11 @@ export default function TamagotchiPanda() {
     }, []);
 
     // Choose pet image based on stats
-    let petImage = "/tamagotchi-neutral.gif"; // Default GIF
+    let petImage = "/gifs/tamagotchi-neutral.gif"; // Default GIF
     if (hunger > 70 && happiness > 70 && energy > 70) {
-        petImage = "/tamagotchi-happy.gif"; // Happy Pet GIF
+        petImage = "/gifs/tamagotchi-happy.gif"; // Happy Pet GIF
     } else if (hunger < 30 || happiness < 30 || energy < 30) {
-        petImage = "/tamagotchi-sad.gif"; // Sad Pet GIF
+        petImage = "/gifs/tamagotchi-sad.gif"; // Sad Pet GIF
     }
 
     return(
@@ -34,13 +34,7 @@ export default function TamagotchiPanda() {
 
         {/* 8-bit Pet Display */}
         <div className="mt-4">
-            <Image
-                src={petImage} // ✅ Updated to GIF format
-                alt="Tamagotchi Pet"
-                width={250} // Increased size
-                height={250} // Increased size
-                className="pixelated mx-auto"
-            />
+            <img src={petImage} alt="GIF"></img>
         </div>
 
         {/* Display Pet Stats */}

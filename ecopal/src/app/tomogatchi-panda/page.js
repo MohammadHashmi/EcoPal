@@ -20,7 +20,7 @@ export default function TamagotchiPanda() {
     }, []);
 
     // Choose pet image based on stats
-    let petImage = "/gifs/panda-n.gif"; // Default GIF
+    let petImage = "../../public/gifs/panda-n.gif"; // Default GIF
     if (hunger > 70 && happiness > 70 && energy > 70) {
         petImage = "/gifs/panda-h.gif"; // Happy Pet GIF
     } else if (hunger < 30 || happiness < 30 || energy < 30) {
@@ -28,7 +28,7 @@ export default function TamagotchiPanda() {
     }
 
     return(
-<div className="max-w-md mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center border-4 border-gray-600">
+        <div className="max-w-md mx-auto p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center border-4 border-gray-600">
         <h1 className="text-3xl font-bold pixel-font">🐾 My 8-bit Pet</h1>
         <p className="mt-2">Take care of your Tamagotchi!</p>
 
