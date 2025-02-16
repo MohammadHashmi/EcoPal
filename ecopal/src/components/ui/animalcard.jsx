@@ -75,7 +75,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
       </DrawerHeader>
       <DrawerFooter className="grid grid-cols-2">
         <DrawerClose>
-          <Button className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText">Adopt</Button>
+                <Button className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText">Adopt</Button>
         </DrawerClose>
         <DrawerClose asChild>
           <Button
