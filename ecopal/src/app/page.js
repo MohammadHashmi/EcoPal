@@ -65,15 +65,13 @@ const Index = () => {
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/all-animals">
+              <Button>View All Animals</Button>
+              <Link href="/info">
                 <Button>
-                  View All Animals
+                  <Globe className="mr-2 h-4 w-4" />
+                  <span>Learn More</span>
                 </Button>
               </Link>
-              <Button >
-                <Globe className="mr-2 h-4 w-4" />
-                Learn More
-              </Button>
             </div>
           </div>
         </div>
