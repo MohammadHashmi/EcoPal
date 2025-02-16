@@ -33,14 +33,14 @@ export default function Tamagotchi() {
       name: "Fox",
       owner: "Wild spirit",
       status: "Mischievous today!",
-      imageUrl: "https://images.unsplash.com/photo-1503457574464-0ec7ee78e1fe",
+      imageUrl: "https://images.unsplash.com/photo-1474511320723-9a56873867b5",
     },
     {
       id: 4,
       name: "Panda",
       owner: "Bamboo muncher",
       status: "Taking a nap!",
-      imageUrl: "https://images.unsplash.com/photo-1546182990-dffeafbe841d",
+      imageUrl: "https://images.unsplash.com/photo-1597953601374-1ff2d5640c85",
     },
   ];
 
