@@ -22,7 +22,7 @@ export default function TamagotchiPanda() {
     }, []);
 
     // Choose pet image based on stats
-    let petImage = "/gifs/panda-n.gif"; // Default GIF
+    let petImage = "../../public/gifs/panda-n.gif"; // Default GIF
     if (hunger > 70 && happiness > 70 && energy > 70) {
         petImage = "/gifs/panda-h.gif"; // Happy Pet GIF
     } else if (hunger < 30 || happiness < 30 || energy < 30) {
