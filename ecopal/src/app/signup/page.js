@@ -3,6 +3,7 @@ import { useState } from "react";
 import { supabase } from "../../../lib/supabase";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import {
   Form,
   FormControl,
@@ -45,7 +46,14 @@ export default function SignUp() {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-gray-800 text-white rounded-lg shadow-lg">
+<div className="flex items-center flex-col bg-[#E6D136] min-h-screen">
+  <img src="https://i.redd.it/bbddwclsebi91.gif"></img>
+  <div className="max-w-md mx-auto mt-10 p-6 bg-[#A3E636]  text-text border-2 border-border dark:border-darkBorder shadow-light shadow-lg">
+      <Link href="/">
+        <Button className="absolute top-0 left-0 m-16">
+          <img src="https://static.thenounproject.com/png/941793-200.png" className="w-14 h-30 py-4 scale-x-[-1]"></img>
+        </Button>
+      </Link>
       <h2 className="text-2xl font-bold mb-4 text-center">Sign Up</h2>
 
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
@@ -63,7 +71,7 @@ export default function SignUp() {
                   <input
                     {...field}
                     type="email"
-                    className="w-full px-3 py-2 rounded-md border border-gray-600 bg-gray-900 focus:border-blue-500 focus:ring focus:ring-blue-500 outline-none"
+                    className="w-full px-3 py-2 bg-[#E0E7F1] border-black border-border border-2 outline-none"
                     placeholder="Enter your email"
                   />
                 </FormControl>
@@ -83,7 +91,7 @@ export default function SignUp() {
                   <input
                     {...field}
                     type="password"
-                    className="w-full px-3 py-2 rounded-md border border-gray-600 bg-gray-900 focus:border-blue-500 focus:ring focus:ring-blue-500 outline-none"
+                    className="w-full px-3 py-2 bg-[#E0E7F1] border-black border-border border-2 outline-none"
                     placeholder="Enter your password"
                   />
                 </FormControl>
@@ -95,12 +103,14 @@ export default function SignUp() {
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+            className="w-full bg-[#E0E7F1] hover:bg-[#4BE636] text-black font-bold py-2 px-4 transition duration-300"
           >
             Sign Up
           </Button>
         </form>
       </Form>
     </div>
+</div>
+    
   );
 }
