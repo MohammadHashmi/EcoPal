@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
+import Link from "next/link";
 
 const animals = [
   {
@@ -32,7 +33,7 @@ const animals = [
     location: "Indonesia",
     imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
     status: "vulnerable"
-  },
+  }
 ];
 
 const Index = () => {
@@ -49,7 +50,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start">
+    <div className="min-h-screen flex flex-col items-center justify-start w-full">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="container mx-auto px-4">
@@ -65,15 +66,15 @@ const Index = () => {
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button>View All Animals</Button>
-
-              {/* ✅ Fixed: Corrected Link and Button Implementation */}
-              <Link href="/info">
+              <Link href="/all-animals">
                 <Button>
-                  <Globe className="mr-2 h-4 w-4" />
-                  <span>Learn More</span>
+                  View All Animals
                 </Button>
               </Link>
+              <Button >
+                <Globe className="mr-2 h-4 w-4" />
+                Learn More
+              </Button>
             </div>
           </div>
         </div>
