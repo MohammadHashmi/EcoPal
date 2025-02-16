@@ -4,6 +4,9 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Globe, Leaf } from "lucide-react";
+import Marquee from "@/components/ui/marquee";
+
+const items = ['Conservation Efforts', 'Education & Awareness', 'Community Involvement']
 
 const missionPoints = [
   {
@@ -68,11 +71,11 @@ export default function TeamMissionPage() {
       <section className="py-20">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold text-natural-800">
-            How We Make a Difference
+            How We Make a Difference (CHANGE THIS STUFF)
           </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {missionPoints.map((point) => (
-              <div key={point.id} className="text-text bg-main border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark bg-white">
+              <div key={point.id} className="text-text bg-main border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark bg-white mb-14">
                 <h2 className="px-4 pt-4 text-2xl font-semibold text-[#A3E636]">{point.title}</h2>
                 <p className="px-4 pb-4 text-gray-600 mt-2">{point.description}</p>
               </div>
@@ -80,6 +83,7 @@ export default function TeamMissionPage() {
           </div>
         </div>
       </section>
+      <Marquee items={items}></Marquee>
     </div>
   );
 }
