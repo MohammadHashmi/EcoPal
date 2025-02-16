@@ -31,7 +31,7 @@ export default function Tamagotchi() {
         <h1 className="text-2xl font-bold mb-4">Your Pets</h1>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((tomogatchi) => (
-            <div className="animate-fade-in">
+            <div key={tomogatchi.id} className="animate-fade-in">
               <Link href={"tomogatchi-fox"}>
                 <AnimalCard {...tomogatchi} />
               </Link>
