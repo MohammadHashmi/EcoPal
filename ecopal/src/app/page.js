@@ -74,12 +74,6 @@ const Index = () => {
                   View All Animals
                 </Button>
               </Link>
-              <Button 
-                className="border-4 border-natural-800 bg-natural-100 text-natural-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]"
-              >
-              <Button>
-                View All Animals
-              </Button>
               <Button >
                 <Globe className="mr-2 h-4 w-4" />
                 Learn More
