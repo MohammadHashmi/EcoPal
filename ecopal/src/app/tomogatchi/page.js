@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimalCard } from "../../components/ui/animalcard";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 
 export default function Tamagotchi() {
@@ -52,9 +53,11 @@ export default function Tamagotchi() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((pet) => (
             <div key={pet.id} className="animate-fade-in">
-              <Link href={`/tomogatchi-${pet.name}`}>
-                <AnimalCard {...pet} />
-              </Link>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Link href={`/tomogatchi-${pet.name}`}>
+                  <AnimalCard {...pet} />
+                </Link>
+              </Suspense>
             </div>
           ))}
         </div>
