@@ -9,7 +9,7 @@ import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 
 // Move the component using useSearchParams into a separate component
-function PetsList() {
+export function PetsList() {
   const searchParams = useSearchParams();
   const list = JSON.parse(decodeURIComponent(searchParams.get("list") || "[]"));
 

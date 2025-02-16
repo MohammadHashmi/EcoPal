@@ -12,6 +12,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
+import { PetsList } from "@/app/tomogatchi/page";
+import Link from "next/link";
 
 const statusColors = {
   endangered: "bg-red-400 text-natural-800",
@@ -73,9 +75,7 @@ export const AnimalCard = ({ name, species, location, imageUrl, status, onAdopt 
       </DrawerHeader>
       <DrawerFooter className="grid grid-cols-2">
         <DrawerClose>
-            <Link href="/">
-                <Button className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText">Adopt</Button>
-            </Link>
+          <Button className="bg-[#E0E7F1] text-text dark:bg-darkBg dark:text-darkText">Adopt</Button>
         </DrawerClose>
         <DrawerClose asChild>
           <Button
