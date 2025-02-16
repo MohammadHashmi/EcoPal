@@ -43,6 +43,7 @@ const Index = () => {
   const [list, setList] = useState([])
   async function addTomogatchi(animal){
       const newList = list.concat({
+        id: list.length + 1,
         name: animal,
         owner: "I l0ve animals",
         status: "change soon",
