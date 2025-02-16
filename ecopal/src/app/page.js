@@ -62,7 +62,7 @@ const Index = () => {
               Adopt an Endangered Animal
             </h1>
             <div className="justify-center flex">
-              <img src="https://i.pinimg.com/originals/f4/b2/93/f4b293a32db0415d378080badfd6db7f.gif" className="object-top"></img>
+              <img src="/gifs/pixelpups.gif" alt="GIF"></img>
             </div>
             <p className="mt-6 animate-fade-in text-lg text-natural-800">
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
