@@ -41,7 +41,7 @@ export default function TeamMissionPage() {
       <section className="relative overflow-hidden py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-4 inline-flex items-center border-2 px-4 py-1 text-sm text-natural-800">
+            <Badge className="mb-4 inline-flex items-center border-2 px-4 py-1 text-sm text-natural-800 invisible md:visible">
               <Leaf className="mr-1 h-4 w-4" />
               Our Mission
             </Badge>
