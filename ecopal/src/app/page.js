@@ -31,7 +31,7 @@ const animals = [
     location: "Indonesia",
     imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
     status: "vulnerable"
-  },
+  }
 ];
 
 const Index = () => {
