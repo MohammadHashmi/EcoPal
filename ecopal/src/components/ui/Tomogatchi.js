@@ -4,8 +4,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AnimalCard } from "./animalcard";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+
+//import { newTomogatchi } from "@/app/page";
 
 export default function Tamagotchi() {
+  const searchParams = useSearchParams();
+  const list = JSON.parse(decodeURIComponent(searchParams.get("list") || "[]"));
+
   const tomogatchis = [
     {
       id: 1,
@@ -16,6 +22,7 @@ export default function Tamagotchi() {
     },
   ];
 
+
   return (
     <>
     <div className="container px-4 py-8">
@@ -23,9 +30,9 @@ export default function Tamagotchi() {
       <section className="mb-12">
         <h1 className="text-2xl font-bold mb-4">Your Pets</h1>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {tomogatchis.map((tomogatchi) => (
-            <div key={tomogatchi.id} className="animate-fade-in">
-              <Link href={"tomogatchi-panda"}>
+          {list.map((tomogatchi) => (
+            <div className="animate-fade-in">
+              <Link href={"tomogatchi-fox"}>
                 <AnimalCard {...tomogatchi} />
               </Link>
             </div>

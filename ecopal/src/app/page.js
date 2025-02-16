@@ -9,12 +9,13 @@ import { useToast } from "@/components/ui/use-toast";
 import { Globe, Leaf } from "lucide-react";
 import { supabase } from "../../lib/supabase";
 import { PawPrint } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const animals = [
   {
     id: 1,
     name: "Luna",
-    species: "Snow Leopard",
+    species: "fox",
     location: "Central Asia",
     imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
     status: "endangered"
@@ -22,7 +23,7 @@ const animals = [
   {
     id: 2,
     name: "Atlas",
-    species: "Mountain Gorilla",
+    species: "monkey",
     location: "Central Africa",
     imageUrl: "https://images.unsplash.com/photo-1493962853295-0fd70327578a",
     status: "critical"
@@ -30,7 +31,7 @@ const animals = [
   {
     id: 3,
     name: "Nova",
-    species: "Sumatran Tiger",
+    species: "panda",
     location: "Indonesia",
     imageUrl: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
     status: "vulnerable"
@@ -38,21 +39,23 @@ const animals = [
 ];
 
 const Index = () => {
-  const user = supabase.auth.getUser();
-  if(!user){
-    alert("You must be signed in to adopt an animal!")
+  const router = useRouter();
+  const [list, setList] = useState([])
+  async function addTomogatchi(animal){
+      const newList = list.concat({
+        name: animal,
+        owner: "I l0ve animals",
+        status: "change soon",
+        imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+      },)
+
+      setList(newList)
+      console.log(list)
   }
-  console.log(user)
 
-  async function addTomogatchis(animal){
-    const { sigma: { session } } = await supabase.auth.getSession();
-    const { data, error } = await supabase.from("Tomogatchi's").insert([
-        { user_owner: user, animal_species: animal }
-      ]);
-
-    console.log(data, error)
-    console.log(session)
-
+  function sendToTomogatchiPage() {
+    const queryString = encodeURIComponent(JSON.stringify(list));
+    router.push(`/tomogatchi?list=${queryString}`);
   }
 
   return (
@@ -95,12 +98,10 @@ const Index = () => {
                   <span>Learn More</span>
                 </Button>
               </Link>
-              <Link href="/tomogatchi">
-                <Button>
+                <Button onClick = {sendToTomogatchiPage}>
                   <PawPrint className="mr-2 h-4 w-4" />
                   <span>View Pals</span>
                 </Button>
-              </Link>
             </div>
           </div>
         </div>
@@ -117,7 +118,7 @@ const Index = () => {
               <div key={animal.id} className="animate-fade-in">
                 <AnimalCard
                   {...animal}
-                  onAdopt={() => addTomogatchis("tiger")}
+                  onAdopt={() => addTomogatchi(animal.species)}
                 />
               </div>
             ))}
