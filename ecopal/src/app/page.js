@@ -1,5 +1,6 @@
-'use client'
+"use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { AnimalCard } from "@/components/ui/animalcard";
 import { Button } from "@/components/ui/button";
@@ -51,9 +52,6 @@ const Index = () => {
     <div className="min-h-screen flex flex-col items-center justify-start">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0" />
-        </div>
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <Badge className="mb-4 inline-flex items-center border-2 px-4 py-1 text-sm text-natural-800">
@@ -67,13 +65,15 @@ const Index = () => {
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button>
-                View All Animals
-              </Button>
-              <Button >
-                <Globe className="mr-2 h-4 w-4" />
-                Learn More
-              </Button>
+              <Button>View All Animals</Button>
+
+              {/* ✅ Fixed: Corrected Link and Button Implementation */}
+              <Link href="/info">
+                <Button>
+                  <Globe className="mr-2 h-4 w-4" />
+                  <span>Learn More</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
