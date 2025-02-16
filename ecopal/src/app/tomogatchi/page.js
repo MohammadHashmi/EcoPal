@@ -7,11 +7,25 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-
-export default function Tamagotchi() {
+// Move the component using useSearchParams into a separate component
+function PetsList() {
   const searchParams = useSearchParams();
   const list = JSON.parse(decodeURIComponent(searchParams.get("list") || "[]"));
 
+  return (
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {list.map((pet) => (
+        <div key={pet.id} className="animate-fade-in">
+          <Link href={`/tomogatchi-${pet.name}`}>
+            <AnimalCard {...pet} />
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function Tamagotchi() {
   const otherPets = [
     {
       id: 3,
@@ -34,17 +48,10 @@ export default function Tamagotchi() {
       {/* Your Pets Section */}
       <section className="mb-12 p-6 bg-blue-100 rounded-lg shadow-md">
         <h1 className="text-3xl font-extrabold mb-6 text-blue-900">Your Pets</h1>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((pet) => (
-            <div key={pet.id} className="animate-fade-in">
-              <Suspense fallback={<div>Loading...</div>}>
-                <Link href={`/tomogatchi-${pet.name}`}>
-                  <AnimalCard {...pet} />
-                </Link>
-              </Suspense>
-            </div>
-          ))}
-        </div>
+        {/* Wrap the PetsList component in Suspense */}
+        <Suspense fallback={<div>Loading...</div>}>
+          <PetsList />
+        </Suspense>
       </section>
 
       {/* Other Pets Section */}
@@ -53,11 +60,9 @@ export default function Tamagotchi() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {otherPets.map((pet) => (
             <div key={pet.id} className="animate-fade-in">
-              <Suspense fallback={<div>Loading...</div>}>
               <Link href={`/tamagotchi/${pet.id}`}>
                 <AnimalCard {...pet} />
               </Link>
-              </Suspense>
             </div>
           ))}
         </div>
