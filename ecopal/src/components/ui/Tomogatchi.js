@@ -9,8 +9,6 @@ import { useSearchParams } from "next/navigation";
 //import { newTomogatchi } from "@/app/page";
 
 export default function Tamagotchi() {
-  const searchParams = useSearchParams();
-  const list = JSON.parse(decodeURIComponent(searchParams.get("list") || "[]"));
 
   const tomogatchis = [
     {
