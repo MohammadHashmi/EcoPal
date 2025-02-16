@@ -57,13 +57,16 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-4 inline-flex items-center border-2 px-4 py-1 text-sm text-natural-800">
+            <Badge className="mb-16 inline-flex items-center border-2 px-4 py-1 text-sm text-natural-800">
               <Leaf className="mr-1 h-4 w-4" />
               Make a Difference Today
             </Badge>
             <h1 className="animate-fade-in text-4xl font-bold text-natural-800 sm:text-5xl md:text-6xl">
               Adopt an Endangered Animal
             </h1>
+            <div className="justify-center flex">
+              <img src="https://i.pinimg.com/originals/f4/b2/93/f4b293a32db0415d378080badfd6db7f.gif" className="object-top"></img>
+            </div>
             <p className="mt-6 animate-fade-in text-lg text-natural-800">
               Join our mission to protect endangered species. Your virtual adoption helps fund conservation efforts worldwide.
             </p>
