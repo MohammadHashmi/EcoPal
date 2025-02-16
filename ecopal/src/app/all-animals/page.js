@@ -80,7 +80,8 @@ export default function AllAnimals() {
   return (
     <>
     <h1 className="text-6xl font-extrabold text-center mt-12 mb-8">All Animals</h1>
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="flex items-center justify-center">
+        <div className="container grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {allAnimals.map((animal) => (
               <div key={animal.id} className="animate-fade-in">
                   <AnimalCard
@@ -89,6 +90,7 @@ export default function AllAnimals() {
               </div>
           ))}
       </div>
+    </div>
       </>
     );
 }

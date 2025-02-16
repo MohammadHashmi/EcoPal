@@ -49,7 +49,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start">
+    <div className="min-h-screen flex flex-col items-center justify-start w-full">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 -z-10">
@@ -69,8 +69,7 @@ const Index = () => {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/all-animals">
-                <Button 
-                  className="border-4 border-natural-800 bg-accent-300 text-natural-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                <Button>
                   View All Animals
                 </Button>
               </Link>
